@@ -4,7 +4,7 @@
 [ext_resource path="res://src/Agents/CharacterArriveTo.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 27.4151
+radius = 32.8656
 
 [node name="CharacterArriveTo" type="KinematicBody2D"]
 collision_mask = 2

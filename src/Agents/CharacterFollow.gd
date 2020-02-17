@@ -1,11 +1,9 @@
 extends KinematicBody2D
 
 onready var sprite: Sprite = $TriangleRed
-onready var target: = get_node(target_path)
+onready var target: = get_parent().get_node("CharacterArriveTo")
 
 const ARRIVE_THRESHOLD: = 3.0
-
-export var target_path = NodePath()
 export var follow_offset: = 100.0
 
 export var max_speed: float = 500.0
@@ -39,6 +37,11 @@ func _physics_process(delta: float) -> void:
 	
 	_velocity = move_and_slide(_velocity)
 	sprite.rotation = _velocity.angle()
+	
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider.name == "CharacterArriveTo":
+			get_tree().reload_current_scene()
 
 
 func hit():

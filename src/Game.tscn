@@ -2,9 +2,9 @@
 
 [ext_resource path="res://src/Objects/Circle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/graph-paper.svg" type="Texture" id=2]
-[ext_resource path="res://src/Agents/CharacterFollow.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Agents/CharacterArriveTo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UI/Target.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Agents/Spawner.tscn" type="PackedScene" id=6]
 
 [node name="Game" type="Node2D"]
 
@@ -46,9 +46,29 @@ region_rect = Rect2( 0, 0, 1280, 720 )
 [node name="CharacterArriveTo" parent="." instance=ExtResource( 4 )]
 position = Vector2( 112.809, 231.205 )
 
-[node name="CharacterFollow" parent="." instance=ExtResource( 3 )]
-position = Vector2( 66.9781, 405.525 )
-target_path = NodePath("../CharacterArriveTo")
-
 [node name="Target" parent="." instance=ExtResource( 5 )]
 position = Vector2( -239.488, 268.733 )
+
+[node name="Spawner" parent="." instance=ExtResource( 6 )]
+position = Vector2( 249.138, 785.796 )
+
+[node name="Spawner3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1532.84, 460.774 )
+
+[node name="Spawner5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1157.35, -168.232 )
+
+[node name="Spawner4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1544.8, 51.8008 )
+
+[node name="Spawner6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 241.347, -192.148 )
+
+[node name="Spawner7" parent="." instance=ExtResource( 6 )]
+position = Vector2( -220.242, 592.315 )
+
+[node name="Spawner8" parent="." instance=ExtResource( 6 )]
+position = Vector2( -225.025, 85.2841 )
+
+[node name="Spawner2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1084.97, 787.137 )
