@@ -39,3 +39,7 @@ func _physics_process(delta: float) -> void:
 	
 	_velocity = move_and_slide(_velocity)
 	sprite.rotation = _velocity.angle()
+
+
+func hit():
+	queue_free()
