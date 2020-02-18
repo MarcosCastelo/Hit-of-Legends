@@ -6,45 +6,45 @@
 [ext_resource path="res://assets/trophys/Cup-gold-icon.png" type="Texture" id=4]
 [ext_resource path="res://src/UI/ParallaxBackgroundScore.tscn" type="PackedScene" id=5]
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="DynamicFont" id=13]
-size = 45
-font_data = ExtResource( 2 )
-
-[sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0, 0, 0, 1 )
-corner_detail = 1
 
 [sub_resource type="DynamicFont" id=2]
-size = 60
-outline_size = 1
+size = 45
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 0, 1 )
+corner_detail = 1
 
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.0862745, 0.054902, 0.137255, 1 )
+[sub_resource type="DynamicFont" id=4]
+size = 60
+outline_size = 1
+font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.0862745, 0.054902, 0.137255, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
 bg_color = Color( 0.0705882, 0.0705882, 0.176471, 1 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=8]
 size = 50
 font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.0666667, 0.0666667, 0.192157, 1 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=12]
 size = 45
 font_data = ExtResource( 2 )
 
@@ -60,7 +60,7 @@ margin_left = 373.468
 margin_top = 412.9
 margin_right = 1025.47
 margin_bottom = 520.9
-custom_styles/panel = SubResource( 12 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -70,7 +70,7 @@ margin_left = 35.0
 margin_top = 18.0
 margin_right = 477.0
 margin_bottom = 84.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 2 )
 text = "New HighScore"
 align = 1
 valign = 1
@@ -88,7 +88,7 @@ margin_left = 254.0
 margin_top = 72.3917
 margin_right = 1139.0
 margin_bottom = 373.392
-custom_styles/panel = SubResource( 8 )
+custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -98,7 +98,7 @@ margin_left = 164.876
 margin_top = 179.977
 margin_right = 708.876
 margin_bottom = 276.977
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 text = "Score: 8"
 align = 1
 valign = 1
@@ -116,10 +116,10 @@ margin_left = 791.0
 margin_top = 589.0
 margin_right = 1317.0
 margin_bottom = 699.0
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Restart"
 __meta__ = {
@@ -132,9 +132,9 @@ margin_top = 591.0
 margin_right = 547.0
 margin_bottom = 700.0
 custom_styles/hover = SubResource( 9 )
-custom_styles/pressed = SubResource( 11 )
-custom_styles/normal = SubResource( 10 )
-custom_fonts/font = SubResource( 7 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
