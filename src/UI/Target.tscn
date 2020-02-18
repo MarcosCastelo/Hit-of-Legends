@@ -64,6 +64,7 @@ tracks/1/keys = {
 
 [node name="Target" type="Area2D"]
 collision_layer = 0
+collision_mask = 9
 script = ExtResource( 2 )
 
 [node name="target" type="Sprite" parent="."]

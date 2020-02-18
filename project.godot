@@ -16,12 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Hit of Legends"
-run/main_scene="res://src/Game.tscn"
+run/main_scene="res://src/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Steering="*res://src/Autoload/Steering.gd"
+Stats="*res://src/Autoload/Stats.gd"
 
 [display]
 

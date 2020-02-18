@@ -41,8 +41,10 @@ func _physics_process(delta: float) -> void:
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		if collision.collider.name == "CharacterArriveTo":
-			get_tree().reload_current_scene()
+			collision.collider.set_shooting()
+			get_parent().get_node("AnimationPlayer").play("fade_in")
 
 
 func hit():
+	Stats.score_set(1)
 	queue_free()

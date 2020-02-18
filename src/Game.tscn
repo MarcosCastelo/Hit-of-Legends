@@ -1,10 +1,88 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Objects/Circle.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/graph-paper.svg" type="Texture" id=2]
+[ext_resource path="res://src/UI/ParallaxBackground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Agents/CharacterArriveTo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/UI/Target.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Agents/Spawner.tscn" type="PackedScene" id=6]
+
+[sub_resource type="Animation" id=2]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.698039, 0.698039, 0.698039, 0 ), Color( 0.698039, 0.698039, 0.698039, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CharacterArriveTo:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 0.25 ),
+"update": 0,
+"values": [ Color( 0.698039, 0.698039, 0.698039, 1 ), Color( 0.698039, 0.698039, 0.698039, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 728.646, 18.3354 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 834.951, 19.4351 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 55.4618, 569.048 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 29.7888, 460.212 )
 
 [node name="Game" type="Node2D"]
 
@@ -17,34 +95,11 @@ position = Vector2( 570, 142 )
 [node name="Circle3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 248, 421 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.9, 0.9 )
-
-[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -288.623
-margin_top = -628.262
-margin_right = 2287.38
-margin_bottom = 843.738
-mouse_filter = 2
-color = Color( 0.113725, 0.27451, 0.52549, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-modulate = Color( 1, 1, 1, 0.117647 )
-position = Vector2( 570, 303.75 )
-scale = Vector2( 2, 2 )
-texture = ExtResource( 2 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 1280, 720 )
+[node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
 
 [node name="CharacterArriveTo" parent="." instance=ExtResource( 4 )]
-position = Vector2( 112.809, 231.205 )
+position = Vector2( 530.355, 409.914 )
+z_index = 0
 
 [node name="Target" parent="." instance=ExtResource( 5 )]
 position = Vector2( -239.488, 268.733 )
@@ -72,3 +127,40 @@ position = Vector2( -225.025, 85.2841 )
 
 [node name="Spawner2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1084.97, 787.137 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -53.0
+margin_top = -32.3298
+margin_right = 1394.0
+margin_bottom = 764.67
+color = Color( 0.698039, 0.698039, 0.698039, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "fade_out"
+anims/fade_in = SubResource( 2 )
+anims/fade_out = SubResource( 1 )
+
+[node name="Colisores" type="Node2D" parent="."]
+position = Vector2( -53, -32.3298 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Colisores"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisores/StaticBody2D"]
+position = Vector2( 725.858, 20.436 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Colisores/StaticBody2D"]
+position = Vector2( 682.251, 768.457 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Colisores/StaticBody2D"]
+position = Vector2( 1.1104, 500.721 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Colisores/StaticBody2D"]
+position = Vector2( 1440.4, 409.45 )
+shape = SubResource( 6 )
+[connection signal="animation_finished" from="AnimationPlayer" to="CharacterArriveTo" method="_on_AnimationPlayer_animation_finished"]

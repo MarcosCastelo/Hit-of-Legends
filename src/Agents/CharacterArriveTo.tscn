@@ -7,6 +7,8 @@
 radius = 32.8656
 
 [node name="CharacterArriveTo" type="KinematicBody2D"]
+z_index = 1
+collision_layer = 11
 collision_mask = 2
 script = ExtResource( 2 )
 

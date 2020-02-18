@@ -55,3 +55,12 @@ func shoot():
 
 func _on_Timer_timeout() -> void:
 	shooting = false
+
+
+func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
+	if anim_name == "fade_in":
+		get_tree().change_scene("res://src/Score.tscn")
+
+func set_shooting():
+	shooting = true
+	_velocity = Vector2.ZERO
